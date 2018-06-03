@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="網頁關鍵字">
+    <meta name="description" content="這裡是網頁的簡短描述">
+    <meta name="copyright" content="網頁版權">
+    <meta name="distribution" content="網頁發佈地區">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>inheart template</title>
+    <!-- InstanceEndEditable -->
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/tempPage.css" />
+    <script type="text/javascript" src="javascripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+    <style type="text/css">
+    .box {
+        display: inline-block;
+        margin: 1em;
+    }
+
+    .box img {
+        height: 100px;
+    }
+
+    .item-style {
+        background-color: #FEF5EF;
+        border: solid;
+        border-radius: 10px;
+        border-color: #e8e8e8;
+        border-width: 1px;
+    }
+
+    .show-col-2 {
+        background-color: #e6aa98;
+        border-style: solid;
+        border-color: #e8e8e8;
+    }
+    .show-col-2: focus{
+        background-color: #ffcc99;
+    }
+
+    .content {
+        margin: 20px 0;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #e8e8e8;
+        border-radius: 10px
+    }
+    </style>
+    <script>
+    $(function() {
+        $("body").on("click", ".show-col-2", function() {
+            var giftBox = $(this).attr("name");
+            $(".cookie_item").each(function() {
+                var item = $(this).attr("id");
+                if (item != giftBox) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+        });
+
+
+
+
+
+        var record = {};
+        $(".box").draggable({
+            appendTo: "body",
+            helper: "clone",
+            cursor: "move",
+            start: function(event, ui) {
+                record = this;
+                record.helper = ui.helper;
+            }
+        })
+
+        $(".show-col-2").droppable({
+            activeClass: "ui-state-default",
+            //hoverClass:"ui-state-hover",
+            accept: ".box",
+            scroll: true,
+            ScrollSensative: 100,
+            drop: function(event, ui) {
+                $(this)
+                    .find(".box")
+                    .html("Dropped!");
+            }
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="page-container">
+            <header id="header">
+                <div class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand inheart-logo block-center" href="#">In Heart</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/">禮盒</a></li>
+                                <li><a href="/Home/About">購物須知</a></li>
+                                <li><a href="/Home/Contact">服務團隊</a></li>
+                                <li><a href="/Guestbook">線上諮詢</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/Account/Register" id="registerLink">註冊</a></li>
+                                <li><a href="/Account/Login" id="loginLink">登入</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /header -->
+            <div id="main" class="container">
+                <div id="content-body">
+                    <div class="a-block">
+                        <h2 class="text-center article">客製化禮盒</h2>
+                        <div class="a-block-container block-center">
+                            <div class="text-right col-sm-3"><img src="images/box1.png" alt=""></div>
+                            <div class="text-left  col-sm-3">
+                                <h3>鳳凰于飛</h3><small>彌月喜餅</small>
+                                <h4>640 元</h4>
+                            </div>
+                            <div class="col-sm-6">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>配置</td>
+                                            <td>小餅乾X20、薄餅乾X12、典藏餅乾X1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>尺寸</td>
+                                            <td>data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="a-block container">
+                        <div class="a-block-container col-md-6 col-lg-6">
+                            <h3 class="text-center">禮盒配置</h3>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-4" style="padding: 0">
+                                        <div id="sm_cookie1" class="show-col-2" name="small_cookie_items" style="height: 100px">
+                                        </div>
+                                        <div id="sm_cookie2" class="show-col-2" name="small_cookie_items" style="height: 100px">
+                                        </div>
+                                        <div id="sm_cookie3" class="show-col-2" name="small_cookie_items" style="height: 100px">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" style="padding: 0">
+                                        <div id="sm_cookie4" class="show-col-2" name="small_cookie_items" style="height: 100px">
+                                        </div>
+                                        <div id="collection_cookie" class="show-col-2" name="collection_cookie_items" style="height: 100px">
+                                        </div>
+                                        <div id="sm_cookie5" class="show-col-2" name="small_cookie_items" style="height: 100px">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" style="padding: 0">
+                                        <div id="thin_cookie1" class="show-col-2" name="thin_cookie_items" style="height: 150px">
+                                        </div>
+                                        <div id="thin_cookie2" class="show-col-2" name="thin_cookie_items" style="height: 150px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="long_cookie_items" class="a-block-container col-md-6 col-lg-6 cookie_item">
+                            <h3 class="text-center">長餅乾</h3>
+                            <div class="a-block-body item-style">
+                                <div class="box">
+                                    <img src="images/cookie10100.png" alt="">
+                                    <p class="lblProductName">杏仁乳加</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie10200.png" alt="">
+                                    <p class="lblProductName">抹茶小熊餅乾</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie10300.png" alt="">
+                                    <p class="lblProductName">葉子餅乾</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie10400.png" alt="">
+                                    <p class="lblProductName">蝴蝶餅</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="small_cookie_items" class="a-block-container col-md-6 col-lg-6 cookie_item">
+                            <h3 class="text-center">小餅乾</h3>
+                            <div class="a-block-body item-style">
+                                <div class="box">
+                                    <img src="images/cookie20100.png" alt="">
+                                    <p class="lblProductName">巧克力杏仁</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20200.png" alt="">
+                                    <p class="lblProductName">巧克力酥餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20300.png" alt="">
+                                    <p class="lblProductName">巧克力腰果</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20400.png" alt="">
+                                    <p class="lblProductName">巧克力燕麥</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20500.png" alt="">
+                                    <p class="lblProductName">伯爵杏仁</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20600.png" alt="">
+                                    <p class="lblProductName">咖啡核桃</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20700.png" alt="">
+                                    <p class="lblProductName">芝麻酥餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20800.png" alt="">
+                                    <p class="lblProductName">香草莎布列</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie20900.png" alt="">
+                                    <p class="lblProductName">海苔酥餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie21000.png" alt="">
+                                    <p class="lblProductName">草莓奶酥餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie21100.png" alt="">
+                                    <p class="lblProductName">草莓花圈</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie21200.png" alt="">
+                                    <p class="lblProductName">國王盾牌</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie21300.png" alt="">
+                                    <p class="lblProductName">辣味起司酥餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie21400.png" alt="">
+                                    <p class="lblProductName">濃情巧克力</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie21500.png" alt="">
+                                    <p class="lblProductName">麗絲餅乾</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="thin_cookie_items" class="a-block-container col-md-6 col-lg-6 cookie_item">
+                            <h3 class="text-center">薄餅乾</h3>
+                            <div class="a-block-body item-style">
+                                <div class="box">
+                                    <img src="images/cookie30100.png" alt="">
+                                    <p class="lblProductName">檸檬烙印餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie30200.png" alt="">
+                                    <p class="lblProductName">杏仁瓦片</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie30300.png" alt="">
+                                    <p class="lblProductName">烏龍茶薄餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie30400.png" alt="">
+                                    <p class="lblProductName">椰子酥餅</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collection_cookie_items" class="a-block-container col-md-6 col-lg-6 cookie_item">
+                            <h3 class="text-center">典藏餅乾</h3>
+                            <div class="a-block-body item-style">
+                                <div class="box">
+                                    <img src="images/cookie40100.png" alt="">
+                                    <p class="lblProductName">抹茶雪球</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie40200.png" alt="">
+                                    <p class="lblProductName">草莓蛋白餅</p>
+                                </div>
+                                <div class="box">
+                                    <img src="images/cookie40300.png" alt="">
+                                    <p class="lblProductName">杏仁雪球</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /main End -->
+    </div>
+    <!-- /page-container End -->
+    </div>
+    <!-- /wrapper End -->
+</body>
+
+</html>

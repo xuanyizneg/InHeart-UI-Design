@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="網頁關鍵字">
+    <meta name="description" content="這裡是網頁的簡短描述">
+    <meta name="copyright" content="網頁版權">
+    <meta name="distribution" content="網頁發佈地區">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>inheart template</title>
+    <!-- InstanceEndEditable -->
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/tempPage.css" />
+    <script type="text/javascript" src="javascripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+    <script type="text/javascript">
+    $(function() {
+        $("body").on("click", "#btnAdd", function() {
+            var table = document.getElementById('DeliveryTable').getElementsByTagName('tbody')[0];
+
+            var newrow = table.insertRow(-1);
+            var tdId = newrow.insertCell(0);
+            var tdItem = newrow.insertCell(1);
+            var tdNumber = newrow.insertCell(2);
+            var tdName = newrow.insertCell(3);
+            var tdPhone = newrow.insertCell(4);
+            var tdAddress = newrow.insertCell(5);
+
+            tdId.innerHTML = '<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+            tdItem.innerHTML = '<select class="form-control">' +
+                '<option>彌月禮盒/鳳凰于飛</option>' +
+                '<option>彌月禮盒/雙鳳承祥</option>' +
+                '</select>';
+            tdNumber.innerHTML = '<input type="text" class="form-control" placeholder="最少12盒">';
+            tdName.innerHTML = '<input type="text" class="form-control" placeholder="收貨人">';
+            tdPhone.innerHTML = '<input type="text" class="form-control" placeholder="連絡電話">';
+            tdAddress.innerHTML = '<input type="text" class="form-control" placeholder="運送地址">';
+        });
+
+
+        $("body").on("click", ".close", function() {
+            var deletetr = $(this).closest('tr').index();
+            document.getElementById("DeliveryTable").deleteRow(deletetr + 1);
+
+        });
+    });
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="page-container">
+            <header id="header">
+                <div class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand inheart-logo block-center" href="#">In Heart</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/">禮盒</a></li>
+                                <li><a href="/Home/About">購物須知</a></li>
+                                <li><a href="/Home/Contact">服務團隊</a></li>
+                                <li><a href="/Guestbook">線上諮詢</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/Account/Register" id="registerLink">註冊</a></li>
+                                <li><a href="/Account/Login" id="loginLink">登入</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /header -->
+            <div id="main" class="container">
+                <div id="content-header">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div id="checkoutbar" class="progressbar container">
+                                <ul class="row">
+                                    <li>運送/付款方式</li>
+                                    <li class="active">運送/付款資料</li>
+                                    <li>送出訂單</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-body">
+                    <div id="CommodityInformation" class="a-block a-block-body">
+                        <h3>商品資訊</h3>
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-3">商品</th>
+                                    <th class="col-md-3">品項</th>
+                                    <th class="col-md-2">單價</th>
+                                    <th class="col-md-2">數量</th>
+                                    <th class="col-md-2">小計</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="images/box1.png" alt="">
+                                        <p>彌月禮盒/鳳凰于飛</p>
+                                    </td>
+                                    <td>
+                                        <span>
+                                        巧克力酥   4個<br />
+                                        巧克力杏仁 4個<br />
+                                        巧克腰果   4個<br />
+                                        海苔酥餅   4個<br />
+                                        芝麻酥餅   4個<br />
+                                    </span>
+                                    </td>
+                                    <td>233</td>
+                                    <td>20</td>
+                                    <td>6440</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/box1.png" alt="">
+                                        <p>彌月禮盒/雙鳳承翔</p>
+                                    </td>
+                                    <td>
+                                        <span>
+                                        巧克力酥   4個<br />
+                                        巧克力杏仁 4個<br />
+                                        巧克腰果   4個<br />
+                                        海苔酥餅   4個<br />
+                                        芝麻酥餅   4個<br />
+                                    </span>
+                                    </td>
+                                    <td>233</td>
+                                    <td>20</td>
+                                    <td>6440</td>
+                                </tr>
+                                <tr>
+                                    <td>總計</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>12880</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="DeliveryInformation" class="a-block a-block-body">
+                        <h3>運送資訊:宅配</h3>
+                        <input type="button" id="btnAdd" class="btn btn-sm btn-default col-S-11 col-md-offset-11" value="新增配送地址">
+                        <table id="DeliveryTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-1"></th>
+                                    <th class="col-md-2">品項</th>
+                                    <th class="col-md-2">宅配數量</th>
+                                    <th class="col-md-2">收貨人</th>
+                                    <th class="col-md-2">連絡電話</th>
+                                    <th class="col-md-3">地址</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="close" aria-label="Close">
+                                            <span aria-hidden="true">
+                                        </style>&times;</span>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>彌月禮盒/鳳凰于飛</option>
+                                            <option>彌月禮盒/雙鳳承祥</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="最少12盒">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="收貨人">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="連絡電話">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="運送地址">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- InstanceEnd -->
+                    </div>
+                    <div id="PayInformation" class="a-block a-block-body">
+                        <h3>付款資訊:信用卡</h3>
+                        <table class="table" style="text-align: center">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-4">付款人</th>
+                                    <th class="col-md-4">聯絡電話</th>
+                                    <th class="col-md-4">信箱</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="付款人">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="聯絡電話">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="信箱">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- InstanceEnd -->
+                    </div>
+                    <div class="checkbox a-block">
+                        <label>
+                            <input type="checkbox" value="">已閱讀“運送方式說明”及“付款方式說明”。
+                        </label>
+                    </div>
+                    <div class="a-block">
+                        <input type="button" class="btn btn-lg btn-primary col-md-9 col-md-offset-9" value="下一步" />
+                    </div>
+                </div>
+            </div><!-- /main End -->
+        </div><!-- /page-container End -->
+    </div><!-- /wrapper End -->
+</body>
+
+</html>
