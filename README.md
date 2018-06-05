@@ -21,7 +21,7 @@ HTML/CSS/jQuery網頁架構
 >上圖為商品頁，選擇想要的禮盒，再進行下一步的客製化步驟。
 
 
-![html/css/js](https://github.com/xuanyizneg/InHeart-UI-Design/blob/master/inheart%20html:css:js%20%203.png)
+![html/css/js](https://github.com/xuanyizneg/InHeart-UI-Design/blob/master/inheart%20html:css:js%202.png)
 >上圖為客製化頁面，將想要的餅乾拖曳到左方的禮盒配置圖。
 
 ![html/css/js](https://github.com/xuanyizneg/InHeart-UI-Design/blob/master/inheart%20html:css:js%20%203.png)
